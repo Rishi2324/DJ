@@ -21,7 +21,7 @@ function App() {
   // Fetch sounds
   const fetchSounds = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/sounds");
+      const res = await axios.get("https://dj-n1at.onrender.com/api/sounds");
       setSounds(res.data);
     } catch (err) {
       console.log(err);
@@ -38,7 +38,7 @@ function App() {
     formData.append("audio", audio);
 
     try {
-      await axios.post("http://localhost:5000/api/sounds", formData);
+      await axios.post("https://dj-n1at.onrender.com/api/sounds", formData);
 
       setTitle("");
       setCategory("");
@@ -53,7 +53,7 @@ function App() {
   // Delete sound
   const deleteSound = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/sounds/${id}`);
+      await axios.delete(`https://dj-n1at.onrender.com/api/sounds/${id}`);
 
       setSounds((prev) =>
         prev.filter((sound) => sound._id !== id)
